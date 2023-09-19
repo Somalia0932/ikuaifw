@@ -1,0 +1,39 @@
+name: Download and Publish
+
+on:
+  schedule:
+    - cron: "0 0 */3 * *"
+
+jobs:
+  download_and_publish:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Download file
+        run: |
+          curl -o "Version_all_$(date +'%Y%m%d').txt" "https://download.ikuai8.com/submit3x/Version_all"
+
+      - name: Create release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: "v$(date +'%Y%m%d')"
+          release_name: "Release $(date +'%Y%m%d')"
+          draft: false
+          prerelease: false
+
+      - name: Upload file
+        id: upload_file
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./Version_all_$(date +'%Y%m%d').txt"
+          asset_name: "Version_all_$(date +'%Y%m%d').txt"
+          asset_content_type: "text/plain"
