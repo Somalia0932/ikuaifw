@@ -3,7 +3,8 @@ name: Download and Publish
 on:
   schedule:
     - cron: "0 0 */3 * *"
-
+  pull_request:
+    branches: [ main ]
 jobs:
   download_and_publish:
     runs-on: ubuntu-latest
