@@ -1,8 +1,8 @@
 # ikuaifw
 爱快固件
 download with ipfs gateaway
-like https://4everland.io/ipfs/QmV5ibLDRKow4wVrrps9RSjNEG8cyz33AEunLJ7kfNQJ7V
-format it https://4everland.io/ipfs/{cid}
+like https://4everland.io/ipfs/QmV5ibLDRKow4wVrrps9RSjNEG8cyz33AEunLJ7kfNQJ7V <br>
+format is https://4everland.io/ipfs/{cid}
 | cid | filename |
 | -------- | ---- |
 |QmV5ibLDRKow4wVrrps9RSjNEG8cyz33AEunLJ7kfNQJ7V|iKuai8_x64_3.6.3_Enterprise_Build202204081243.bin|
