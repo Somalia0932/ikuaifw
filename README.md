@@ -3,6 +3,7 @@
 download with ipfs gateaway
 like https://4everland.io/ipfs/QmV5ibLDRKow4wVrrps9RSjNEG8cyz33AEunLJ7kfNQJ7V <br>
 format is https://4everland.io/ipfs/{cid}
+beenwolk it if you like 
 | cid | filename |
 | -------- | ---- |
 |QmS1RTyyLRR9Wh165hhKrGN4TgwjK5MkvJbainLSQ3uUqp|IK-MT7981V1-M5S_sysupgrade_3.7.5_Build202308311702.bin|
