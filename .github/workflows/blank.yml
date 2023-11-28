@@ -9,9 +9,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
       - name: Download file
         run: |
           wget -O downloaded_file.txt https://download.ikuai8.com/submit3x/Version_all
