@@ -1,5 +1,5 @@
 # ikuaifw
-爱快固件
+爱快固件收集 禁止违法用途
 download with ipfs gateaway
 like https://4everland.io/ipfs/QmV5ibLDRKow4wVrrps9RSjNEG8cyz33AEunLJ7kfNQJ7V <br>
 format is https://4everland.io/ipfs/{cid}
