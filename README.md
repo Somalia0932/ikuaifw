@@ -61,8 +61,8 @@ int32_t hash(uint8_t* a1, uint32_t a2)
 	uint32_t v5;
 	while (a2 != (uint32_t)v2) {
 		v4 = a1[v2++];
-		v5 = hash_table[(v4 ^ (uint8_t)result) & 0xf] ^ ((uint32_t)result >> 4);
-		result = hash_table[((uint8_t)v5 ^ (v4 >> 4)) & 0xf] ^ (v5 >> 4);
+		v5 = ((uint32_t *)hash_table)[(v4 ^ (uint8_t)result) & 0xf] ^ ((uint32_t)result >> 4);
+		result = ((uint32_t *)hash_table)[((uint8_t)v5 ^ (v4 >> 4)) & 0xf] ^ (v5 >> 4);
 	}
 	return result;
 }
@@ -110,6 +110,8 @@ int main()
 	hash_var = __builtin_bswap32(~hash(initrd_start, initrd_size - 4));
 	hash_var = __builtin_bswap32(~hash((uint8_t*)&hash_var, 4));
 	p_hash = (uint8_t*)(initrd_start + initrd_size - 4);
+	printf("calculated  hash_var:%x\n",hash_var);
+	printf("authentic p_hash:%x\n", *(uint32_t*)p_hash);
 	if (*(uint32_t*)p_hash == hash_var) {
 		printf("success\n");
 	}
